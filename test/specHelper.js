@@ -4,5 +4,4 @@ var assert = {
       throw new Error(actual + "is not equal to" + expected);
     }
   }
-}
-
+};

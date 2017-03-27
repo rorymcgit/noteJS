@@ -5,3 +5,7 @@ function Note(text) {
 Note.prototype.seeFullContent = function() {
   return this.content;
 };
+
+Note.prototype.seeSummary = function() {
+  return this.content.slice(0,20);
+};
