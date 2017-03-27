@@ -1,0 +1,22 @@
+{
+  "name": "notejs",
+  "version": "1.0.0",
+  "description": "``` As a programmer, So I can find the one I want, I can see a list of my notes, where each note is abbreviated to the first 20 characters. ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rorymcgit/noteJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rorymcgit/noteJS/issues"
+  },
+  "homepage": "https://github.com/rorymcgit/noteJS#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
