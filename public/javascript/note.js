@@ -1,11 +1,17 @@
-function Note(text) {
-  this.content = text;
-};
+(function(exports){
 
-Note.prototype.seeFullContent = function() {
-  return this.content;
-};
+  function Note(text) {
+    this.content = text;
+  };
 
-Note.prototype.seeSummary = function() {
-  return this.content.slice(0,20);
-};
+  Note.prototype.seeFullContent = function() {
+    return this.content;
+  };
+
+  Note.prototype.seeSummary = function() {
+    return this.content.slice(0,20);
+  };
+
+  exports.Note = Note;
+  
+})(this);
