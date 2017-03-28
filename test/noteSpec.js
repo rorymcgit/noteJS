@@ -13,7 +13,5 @@ function testSummaryHasOnlyTwentyCharacters() {
   assert.isEqual(actual, expected);
 }
 
-
 testSeeFullContent();
 testSummaryHasOnlyTwentyCharacters();
-
