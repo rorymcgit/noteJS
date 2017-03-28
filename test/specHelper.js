@@ -6,7 +6,7 @@ var assert = {
     }
     else {
       console.log("TEST PASSED!\n" + actual + "\n**is equal to**\n" + expected);
-    };
+    }
   },
 
   isTrue: function(assertionToCheck) {
@@ -14,7 +14,7 @@ var assert = {
       throw new Error("\nAssertion failed:\n" + assertionToCheck + "\n**is not truthy.**");
     }
     else {
-      console.log("TEST PASSED!\n" + assertionToCheck + "\n**is truthy**")
+      console.log("TEST PASSED!\n" + assertionToCheck + "\n**is truthy**");
     }
   }
 
