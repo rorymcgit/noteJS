@@ -1,23 +1,22 @@
 (function(exports){
 
-  var notes = [];
+  function NoteList() {
+    this.notes = [];
+  }
 
-  function createNote (text) {
+  NoteList.prototype.createNote = function (text) {
     note = new Note(text);
-    _saveNote(note);
-  }
-
-  function allNotes () {
-    return notes;
-  }
-
-  function _saveNote (note) {
-    notes.push(note);
-  }
-
-  exports.NoteList = {
-    createNote: createNote,
-    allNotes: allNotes
+    this._saveNote(note);
   };
+
+  NoteList.prototype.allNotes = function() {
+    return this.notes;
+  };
+
+   NoteList.prototype._saveNote = function(note) {
+    this.notes.push(note);
+  };
+
+  exports.NoteList = NoteList;
 
 })(this);
