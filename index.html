@@ -1,28 +1,34 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
     <script src="./app.js"></script>
-  <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script src="./public/javascript/note.js"></script>
+    <script src="./public/javascript/noteList.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
         <title>Note Application, John, Rory, Ashwini and Vicky</title>
     </head>
     <body>
         <div id="header">
             <div id="name">Web Note</div>
             <div id="menubutton"><a id="menulink" href="#">MENU</a></div>
-               
+
             <button onclick="alertMe()">Note App</button>
 
             <div id="menu" class="hiddenmenu">
                 <div class="menuitem"><a id="home" href="#">Home</a></div>
-                <div class="menuitem"><a id="about" href="#">About us</a></div>
+                <div class="menuitem"><a id="about" onclick="aboutUs()" href="#">About us</a></div>
             </div>
             <div class="clear"></div>
         </div>
         <div id="container">
-            <textarea id="area" rows="10" cols="50"></textarea>
+            <textarea id="note-text" rows="10" cols="50"></textarea>
+            <button id="submit-btn" type="submit" value="Submit">Submit</button>
+            <script src="./public/javascript/noteListSaveUserContent.js"></script>
         </div>
         <div class="footer">
-            <p>Makers Academy, Note App</p>
+            <p>© Makers Academy, Note App</p>
         </div>
     </body>
 </html>
