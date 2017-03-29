@@ -10,10 +10,9 @@ app.use(express.static('./public'));
 
 app.get('/', function(req, res) {
   res.render('index');
-})
-
-
+});
 
 app.listen(port, function(err) {
+  if (err) throw err;
   console.log("We are live on Port" + port);
-})
+});
