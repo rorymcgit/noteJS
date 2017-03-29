@@ -7,7 +7,7 @@
   NoteListView.prototype.displaySummary = function() {
     var arr = this.notelist.allNotes();
     var str = "";
-    for(var i = 0; i< arr.length; i++){
+    for(var i = 0; i < arr.length; i++){
       str += "<li><a href='#' id='"+ i + "'>" + arr[i].seeSummary() + '...' + "</a></li>"
     }
     return str;
