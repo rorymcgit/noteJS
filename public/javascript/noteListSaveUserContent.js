@@ -32,6 +32,8 @@ function getEventTarget(e) {
 var ul = getIt('list');
 ul.onclick = function(event) {
     var target = getEventTarget(event);
+    console.log(target);
+    console.log(target.id);
 index = target.id;
 note = notelist.allNotes()[index];
 getIt('full_content').innerHTML = note.seeFullContent();
