@@ -1,7 +1,6 @@
-function alertMe() {
-  alert("Welcome");
-}
+var httpServer = require("http-server");
+var path = require("path");
 
-function aboutUs() {
-  alert("We are a team of developers sent back in time to save the world by creating a notes app.\n\nJohn, Ashwini, Vicky and Rory.")
-}
+var pathToHtmlAndJsFiles = path.join(__dirname, "/");
+var server = httpServer.createServer({ root: pathToHtmlAndJsFiles });
+server.listen(3000);
