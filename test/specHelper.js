@@ -1,31 +1,40 @@
 var assert = {
 
+  testMessage: function(text) {
+      li = document.createElement("li");
+      li.innerHTML = text;
+      document.getElementById('tests').appendChild(li);
+  },
+
   isEqual: function(actual, expected) {
+    var text;
     if (actual !== expected) {
-      throw new Error("\nAssertion failed:\n" + actual + "\n**IS NOT EQUAL TO**\n" + expected);
+      text = "\nAssertion failed:\n" + actual + "\n**IS NOT EQUAL TO**\n" + expected;
     }
     else {
-      console.log("TEST PASSED!\n" + actual + "\n**is equal to**\n" + expected);
+      text = "TEST PASSED!\n" + actual + "\n**is equal to**\n" + expected;
     }
+    this.testMessage(text);
   },
 
   isTrue: function(assertionToCheck) {
     if(!assertionToCheck){
-      throw new Error("\nAssertion failed:\n" + assertionToCheck + "\n**is not truthy.**");
+      text = "\nAssertion failed:\n" + assertionToCheck + "\n**is not truthy.**";
     }
     else {
-      console.log("TEST PASSED!\n" + assertionToCheck + "\n**is truthy**");
+      text = "TEST PASSED!\n" + assertionToCheck + "\n**is truthy**";
     }
+    this.testMessage(text);
   },
 
   isInstanceOf: function(object, Constructor){
     if(object.constructor !== Constructor){
-      throw new Error("\nComparison failed:\n" + object + "\n**is not an instance of.**" + Constructor);
+      text = "\nComparison failed:\n" + object + "\n**is not an instance of.**" + Constructor;
     }
     else {
-      console.log("TEST PASSED!\n" + object + "\n**is an instance of**" + Constructor);
+      text = "TEST PASSED!\n" + object + "\n**is an instance of**" + Constructor;
     }
-
+    this.testMessage(text);
   },
 
   createMock: function(name, method, returns){
