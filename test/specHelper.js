@@ -16,6 +16,23 @@ var assert = {
     else {
       console.log("TEST PASSED!\n" + assertionToCheck + "\n**is truthy**");
     }
+  },
+
+  isInstanceOf: function(object, Constructor){
+    if(object.constructor !== Constructor){
+      throw new Error("\nComparison failed:\n" + object + "\n**is not an instance of.**" + Constructor);
+    }
+    else {
+      console.log("TEST PASSED!\n" + object + "\n**is an instance of**" + Constructor);
+    }
+
+  },
+
+  createMock: function(name, method, returns){
+    var obj = {};
+    obj[name] = name;
+    obj[method] = function(){return returns;};
+    return obj;
   }
 
 };
