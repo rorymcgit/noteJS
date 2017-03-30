@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express');
 
 var app = express();
@@ -16,3 +17,7 @@ app.listen(port, function(err) {
   if (err) throw err;
   console.log("We are live on Port" + port);
 });
+=======
+notecontroller = new NoteController(new NoteList());
+notecontroller.addToHTML()
+>>>>>>> 11c264f7658f832f6c5c515f937e55817ba1353c
