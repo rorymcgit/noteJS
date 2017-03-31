@@ -3,19 +3,44 @@ function testControllerCanBeInstantiated(){
   assert.isInstanceOf(notecontroller, NoteController);
 }
 
+function testforInsertingFullHTMLContent(){
+  var initialDOMGetElementByID = document.getElementById;
+
+  // var mocknote = assert.createMock('note', 'seeFullContent', "Rory wants to add loads of notes");
+  // // var note = new Note("Rory wants to add loads of notes");
+  // var mocknotelist = assert.createMock('notelist', 'allNotes', [mocknote]);
+  var dummyElement = document.createElement('div');
+  var notecontroller = new NoteController(new NoteList());
+  document['getElementById'] = function(){return dummyElement;};
+  notecontroller.addFullHTML(1);
+  actual = dummyElement.innerHTML;
+  console.log(actual);
+  expected = "<span>Rory wants to add loads of notes</span>";
+  document.getElementById = initialDOMGetElementByID;
+  assert.isEqual(actual, expected);
+}
+
+
 function testforInsertingHTML(){
   var initialDOMGetElementByID = document.getElementById;
   var mocknote = assert.createMock('note', 'seeSummary', "Favourite drink: sel");
   var mocknotelist = assert.createMock('notelist', 'allNotes', [mocknote]);
-  var notecontroller = new NoteController(mocknotelist);
+  mocknotelist['createNote'] = function(){};
   var dummyElement = document.createElement('ul');
   document['getElementById'] = function(){return dummyElement;};
+  var notecontroller = new NoteController(mocknotelist);
+
   notecontroller.addToHTML();
   actual = dummyElement.childNodes[0].childNodes[0].innerText;
   expected = "Favourite drink: sel...";
-  assert.isEqual(actual, expected);
   document.getElementById = initialDOMGetElementByID;
+  assert.isEqual(actual, expected);
 }
 
+
+
+
+
 testControllerCanBeInstantiated();
+testforInsertingFullHTMLContent();
 testforInsertingHTML();

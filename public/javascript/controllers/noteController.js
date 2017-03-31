@@ -13,5 +13,10 @@
     document.getElementById('list').innerHTML = this.notelistview.displaySummary();
   };
 
+  NoteController.prototype.addFullHTML = function(index) {
+    singleNoteView = new SingleNoteView(this.notelist.allNotes()[index]);
+    document.getElementById('full-note').innerHTML = singleNoteView.fullNoteHTML();
+  }
+
   exports.NoteController = NoteController;
 })(this);
