@@ -1,9 +1,14 @@
+var notecontroller;
+
 window.onload = function () {
   notecontroller = new NoteController(new NoteList());
   notecontroller.addToHTML();
 };
 
-
+window.onhashchange = function() {
+  res = document.URL.split('#notes/')[1];
+  notecontroller.addFullHTML(res);
+}
 
 
 // var express = require('express');
