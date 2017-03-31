@@ -2,6 +2,10 @@
 
   function NoteController(notelist){
     this.notelist = notelist;
+    this.notelist.createNote("Favourite drink: seltzer");
+    this.notelist.createNote("Rory wants to add loads of notes");
+    this.notelist.createNote("John has a good sleep last night");
+    this.notelist.createNote("Vicky, thanks for the dark chocolate with sea salt");
     this.notelistview = new NoteListView(this.notelist);
   }
 
