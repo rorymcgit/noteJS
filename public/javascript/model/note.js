@@ -13,5 +13,4 @@
   };
 
   exports.Note = Note;
-
 })(this);

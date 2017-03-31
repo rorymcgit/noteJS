@@ -9,6 +9,5 @@
     document.getElementById('list').innerHTML = this.notelistview.displaySummary();
   };
 
-exports.NoteController = NoteController;
-
+  exports.NoteController = NoteController;
 })(this);

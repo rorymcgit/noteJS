@@ -1,19 +1,19 @@
 var assert = {
 
   testMessage: function(text, color) {
-      li = document.createElement("li");
-      li.innerHTML = text;
-      li.style.color = color;
-      document.getElementById('tests').appendChild(li);
+    li = document.createElement("li");
+    li.innerHTML = text;
+    li.style.color = color;
+    document.getElementById('tests').appendChild(li);
   },
 
   isEqual: function(actual, expected) {
     if (actual !== expected) {
-      text = "\nASSERTION FAILED:\n" + actual + "\n**IS NOT EQUAL TO**\n" + expected;
+      text = "ASSERTION FAILED: " + actual + "**IS NOT EQUAL TO**" + expected;
       color = "red";
     }
     else {
-      text = "TEST PASSED!\n" + actual + "\n**is equal to**\n" + expected;
+      text = "TEST PASSED! " + actual + "**is equal to**" + expected;
       color = "green";
     }
     this.testMessage(text, color);
@@ -21,26 +21,24 @@ var assert = {
 
   isTrue: function(assertionToCheck) {
     if(!assertionToCheck){
-      text = "\ASSERTION FAILED:\n" + assertionToCheck + "\n**is not truthy.**";
+      text = "ASSERTION FAILED: " + assertionToCheck + "**is not truthy.**";
       color = "red"
     }
     else {
-      text = "TEST PASSED!\n" + assertionToCheck + "\n**is truthy**";
+      text = "TEST PASSED! " + assertionToCheck + "**is truthy**";
       color = "green";
-
     }
     this.testMessage(text, color);
   },
 
   isInstanceOf: function(object, Constructor){
     if(object.constructor !== Constructor){
-      text = "\nCOMPARISON FAILED:\n" + object + "\n**is not an instance of.**" + Constructor;
+      text = "COMPARISON FAILED: " + object + "** is not an instance of.** " + Constructor;
       color = "red";
     }
     else {
-      text = "TEST PASSED!\n" + object + "\n**is an instance of**" + Constructor;
+      text = "TEST PASSED! Your " + object + " **is an instance of** " + Constructor.name;
       color = "green";
-
     }
     this.testMessage(text, color);
   },

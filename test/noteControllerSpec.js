@@ -4,6 +4,7 @@ function testControllerCanBeInstantiated(){
 }
 
 function testforInsertingHTML(){
+  var initialDOMGetElementByID = document.getElementById;
   var mocknote = assert.createMock('note', 'seeSummary', "Favourite drink: sel");
   var mocknotelist = assert.createMock('notelist', 'allNotes', [mocknote]);
   var notecontroller = new NoteController(mocknotelist);
@@ -13,6 +14,7 @@ function testforInsertingHTML(){
   actual = dummyElement.childNodes[0].childNodes[0].innerText;
   expected = "Favourite drink: sel...";
   assert.isEqual(actual, expected);
+  document.getElementById = initialDOMGetElementByID;
 }
 
 testControllerCanBeInstantiated();
