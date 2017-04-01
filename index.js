@@ -1,20 +1,22 @@
-var notecontroller;
-
-window.onload = function () {
-  notecontroller = new NoteController(new NoteList());
-  notecontroller.addToHTML();
-};
-
-window.onhashchange = function() {
-  res = document.URL.split('#notes/')[1];
-  notecontroller.addFullHTML(res);
-}
-
-document.getElementById('submit-btn').onclick = function(e) {
-  // console.log("hello");
-  // console.log(e);
-  e.preventDefault();
-};
+// var notecontroller;
+// var notelist;
+//
+// window.onload = function () {
+//   notelist = new NoteList();
+//   notecontroller = new NoteController(notelist);
+// };
+//
+// window.onhashchange = function() {
+//   res = document.URL.split('#notes/')[1];
+//   notecontroller.addFullHTML(res);
+// };
+//
+// document.getElementById('submit-btn').onclick = function(e) {
+//   note = document.getElementById('note-text').value;
+//   notelist.createNote(note);
+//   notecontroller.addToHTML();
+//   e.preventDefault();
+// };
 
 
 

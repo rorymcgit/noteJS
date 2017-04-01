@@ -5,6 +5,7 @@
     <script src="public/javascript/model/noteList.js"></script>
     <script src="public/javascript/view/noteListView.js"></script>
     <script src="public/javascript/view/singleNoteView.js"></script>
+    <script src="public/javascript/controllers/noteController.js"></script>
 
     <link href="public/css/style.css" rel="stylesheet" type="text/css" />
         <title>Note Application, John, Rory, Ashwini and Vicky</title>
@@ -24,7 +25,7 @@
             <div class="clear"></div>
         </div>
         <div id="container">
-        <form id="text" action="#notes/new" method="post">  
+        <form id="text" action="#notes/new" method="post">
             <textarea id="note-text" rows="10" cols="50"></textarea>
             <button id="submit-btn" type="submit" value="Submit">Submit</button>
         </form>
@@ -37,7 +38,14 @@
         </div>
 
 
-        <script src="index.js"></script>
+        <script>
+          var notecontroller;
+          var notelist;
+          notelist = new NoteList();
+          notecontroller = new NoteController(notelist);
+          notecontroller.lookForHashChange();
+          notecontroller.createNewNote();
+        </script>
         <script src="public/javascript/controllers/noteController.js"></script>
 
     </body>
