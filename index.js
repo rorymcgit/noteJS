@@ -10,6 +10,13 @@ window.onhashchange = function() {
   notecontroller.addFullHTML(res);
 }
 
+document.getElementById('submit-btn').onclick = function(e) {
+  // console.log("hello");
+  // console.log(e);
+  e.preventDefault();
+};
+
+
 
 // var express = require('express');
 //

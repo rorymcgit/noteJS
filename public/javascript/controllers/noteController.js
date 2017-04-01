@@ -18,5 +18,9 @@
     document.getElementById('full-note').innerHTML = singleNoteView.fullNoteHTML();
   }
 
+
+
+
+
   exports.NoteController = NoteController;
 })(this);
