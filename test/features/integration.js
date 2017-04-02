@@ -1,18 +1,14 @@
+function addNote() {
+    document.getElementById('note-text').innerHTML = "Rory wants to add loads of notes";
+    document.getElementById('submit-btn').click();
+}
 
-
-function testforInsertingFullHTMLContent() {
-  var initialDOMGetElementByID = document.getElementById;
-  var notelist = new NoteList();
-
-  notelist.createNote("Rory wants to add loads of notes");
-  var dummyElement = document.createElement('div');
-  var notecontroller = new NoteController(notelist);
-  document['getElementById'] = function(){return dummyElement;};
-  notecontroller.addFullHTML(0);
-  actual = dummyElement.innerHTML;
-  expected = "<span>Rory wants to add loads of notes</span>";
-  document.getElementById = initialDOMGetElementByID;
+function testForAddingTextDisplayingSummary() {
+  addNote();
+  actual = document.getElementById('list').childNodes[0].childNodes[0].innerHTML;
+  expected = "Rory wants to add lo...";
   assert.isEqual(actual, expected);
 }
 
-testforInsertingFullHTMLContent();
+
+testForAddingTextDisplayingSummary();
