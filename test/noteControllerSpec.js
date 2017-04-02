@@ -3,20 +3,6 @@ function testControllerCanBeInstantiated(){
   assert.isInstanceOf(notecontroller, NoteController);
 }
 
-function testforInsertingFullHTMLContent(){ // this test needs fixing
-  var initialDOMGetElementByID = document.getElementById;
-  var dummyElement = document.createElement('div');
-  var notecontroller = new NoteController(new NoteList());
-  document['getElementById'] = function(){return dummyElement;};
-  notecontroller.addFullHTML(1);
-  actual = dummyElement.innerHTML;
-  console.log(actual);
-  expected = "<span>Rory wants to add loads of notes</span>";
-  document.getElementById = initialDOMGetElementByID;
-  assert.isEqual(actual, expected);
-}
-
-
 function testforInsertingHTML(){
   var initialDOMGetElementByID = document.getElementById;
   var mocknote = assert.createMock('note', 'seeSummary', "Favourite drink: sel");
@@ -34,5 +20,4 @@ function testforInsertingHTML(){
 }
 
 testControllerCanBeInstantiated();
-//testforInsertingFullHTMLContent();
 testforInsertingHTML();
