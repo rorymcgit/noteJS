@@ -26,7 +26,7 @@
       note = document.getElementById('note-text').value;
       notelist.createNote(note);
       notecontroller.addToHTML();
-      document.getElementById('note-text').value = ''
+      document.getElementById('note-text').value = '';
       e.preventDefault();
     };
   };

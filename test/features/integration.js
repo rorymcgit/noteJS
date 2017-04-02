@@ -10,5 +10,16 @@ function testForAddingTextDisplayingSummary() {
   assert.isEqual(actual, expected);
 }
 
+function testForDisplayingFullContent(){
+  document.getElementById('0').click();
+  setTimeout(function(){
+    actual = document.getElementById('full-note').innerHTML;
+    expected = "<span>Rory wants to add loads of notes</span>";
+    assert.isEqual(actual, expected);
+  }, 2000);
+
+}
+
 
 testForAddingTextDisplayingSummary();
+testForDisplayingFullContent();
